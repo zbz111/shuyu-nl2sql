@@ -9,6 +9,10 @@
 </p>
 
 <p align="center">
+  📺 <a href="https://www.bilibili.com/video/BV1QMWm61EKJ/"><b>演示视频 · 3 分 14 秒</b></a>（中文提问 → 自动出 SQL → 出图 → 删表语句被拦截）
+</p>
+
+<p align="center">
   <img alt="python" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" />
   <img alt="fastapi" src="https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white" />
   <img alt="vue" src="https://img.shields.io/badge/Vue-3.5-42B883?logo=vue.js&logoColor=white" />
