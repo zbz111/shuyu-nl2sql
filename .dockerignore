@@ -1,0 +1,18 @@
+# 构建上下文排除项（没有它镜像会带上 .venv、node_modules、测试数据，几百 MB）
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.testtmp/
+data/uploads/
+data/app.db
+data/*.db
+frontend/node_modules/
+frontend/dist/
+.git/
+.vscode/
+.idea/
+docs/*.log
+*.log
+pytest-cache-files-*/

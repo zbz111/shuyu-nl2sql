@@ -1,0 +1,187 @@
+{
+  "ds_id": 4,
+  "total": 20,
+  "passed": 20,
+  "rows": [
+    {
+      "q": "总销售额是多少？",
+      "ok": true,
+      "why": "期望 10,666,684.54，实际数值 [10666684.54]",
+      "sql": "SELECT SUM(revenue) AS \"总销售额\" FROM orders\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.0,
+      "summary": "结果：10,666,685。"
+    },
+    {
+      "q": "一共有多少个订单？",
+      "ok": true,
+      "why": "期望 19,960.00，实际数值 [19960.0]",
+      "sql": "SELECT COUNT(DISTINCT invoice_no) AS \"订单数\" FROM orders\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.1,
+      "summary": "结果：19,960。"
+    },
+    {
+      "q": "哪个月份的销售额最高？",
+      "ok": true,
+      "why": "期望「2011-11」=1,509,496.33，实际首行 ['2011-11', 1509496.33]",
+      "sql": "SELECT month AS \"月份\", SUM(revenue) AS \"销售额\" FROM orders GROUP BY \"月份\" ORDER BY \"销售额\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.3,
+      "summary": "2011-11：1,509,496。"
+    },
+    {
+      "q": "每个月的销售额分别是多少？",
+      "ok": true,
+      "why": "期望 13 行，实际 13 行",
+      "sql": "SELECT month AS \"月份\", SUM(revenue) AS \"销售额\" FROM orders GROUP BY \"月份\" ORDER BY \"月份\"\nLIMIT 500",
+      "rows": 13,
+      "sec": 1.3,
+      "summary": "2011-11 销售额最高（1,509,496），2011-02 最低（523,632），相差 120%。"
+    },
+    {
+      "q": "哪个国家的销售额最高？",
+      "ok": true,
+      "why": "期望「United Kingdom」=9,025,222.08，实际首行 ['United Kingdom', 9025222.08]",
+      "sql": "SELECT country AS \"国家\", CAST(total_revenue AS REAL) AS \"销售额\" FROM countries ORDER BY \"销售额\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.3,
+      "summary": "United Kingdom：9,025,222。"
+    },
+    {
+      "q": "英国贡献的销售额占比是多少？",
+      "ok": true,
+      "why": "期望 84.61，实际数值 [84.61131522316492]",
+      "sql": "SELECT \n  (SELECT CAST(total_revenue AS REAL) FROM countries WHERE country = 'United Kingdom') * 100.0 / \n  (SELECT SUM(CAST(total_revenue AS REAL)) FROM countries) AS \"英国销售额占比\"\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.7,
+      "summary": "结果：84.61%。"
+    },
+    {
+      "q": "销售额最高的 5 个产品是哪些？",
+      "ok": true,
+      "why": "期望「DOTCOM POSTAGE」=206,248.77，实际首行 ['DOTCOM POSTAGE', 206248.77]",
+      "sql": "SELECT description AS \"产品\", CAST(total_revenue AS REAL) AS \"销售额\" FROM products ORDER BY \"销售额\" DESC LIMIT 5",
+      "rows": 5,
+      "sec": 1.3,
+      "summary": "DOTCOM POSTAGE的销售额最高（206,249），PARTY BUNTING最低（99,504）；结构高度集中，前 3 项贡献超过 70%。"
+    },
+    {
+      "q": "销量最大的产品是哪个？",
+      "ok": true,
+      "why": "期望「PAPER CRAFT , LITTLE BIRDIE」=80,995.00，实际首行 ['PAPER CRAFT , LITTLE BIRDIE', 80995.0]",
+      "sql": "SELECT description AS \"产品\", CAST(total_qty AS REAL) AS \"销量\" FROM products ORDER BY \"销量\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.2,
+      "summary": "PAPER CRAFT , LITTLE BIRDIE：80,995。"
+    },
+    {
+      "q": "每周几的销售额最高？",
+      "ok": true,
+      "why": "期望「周四」=2,203,161.24，实际首行 ['周四', 2203161.24]",
+      "sql": "SELECT weekday AS \"星期\", SUM(revenue) AS \"销售额\" FROM orders GROUP BY \"星期\" ORDER BY \"销售额\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.6,
+      "summary": "周四：2,203,161。"
+    },
+    {
+      "q": "平均每单金额是多少？",
+      "ok": true,
+      "why": "期望 534.40，实际数值 [534.4030330661323]",
+      "sql": "SELECT SUM(revenue) * 1.0 / COUNT(DISTINCT invoice_no) AS \"平均每单金额\" FROM orders\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.3,
+      "summary": "结果：534.4。"
+    },
+    {
+      "q": "下单次数最多的客户花了多少钱？",
+      "ok": true,
+      "why": "期望 33,719.73，实际数值 [33719.73]",
+      "sql": "SELECT total_revenue AS \"销售额\" FROM customers WHERE customer_id = (SELECT customer_id FROM customers GROUP BY customer_id ORDER BY CAST(order_count AS INTEGER) DESC LIMIT 1)",
+      "rows": 1,
+      "sec": 1.3,
+      "summary": "结果：33,720。"
+    },
+    {
+      "q": "2011 年 11 月的销售额是多少？",
+      "ok": true,
+      "why": "期望 1,509,496.33，实际数值 [1509496.33]",
+      "sql": "SELECT SUM(revenue) AS \"销售额\" FROM orders WHERE month = '2011-11'\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.1,
+      "summary": "结果：1,509,496。"
+    },
+    {
+      "q": "销量前 5 的产品是哪些？",
+      "ok": true,
+      "why": "期望「PAPER CRAFT , LITTLE BIRDIE」=80,995.00，实际首行 ['PAPER CRAFT , LITTLE BIRDIE', 80995.0]",
+      "sql": "SELECT description AS \"产品\", CAST(total_qty AS REAL) AS \"销量\" FROM products ORDER BY \"销量\" DESC LIMIT 5",
+      "rows": 5,
+      "sec": 1.1,
+      "summary": "PAPER CRAFT , LITTLE BIRDIE的销量最高（80,995），JUMBO BAG RED RETROSPOT最低（48,474）。"
+    },
+    {
+      "q": "销售额第二高的国家是哪个？",
+      "ok": true,
+      "why": "期望「Netherlands」=285,446.34，实际首行 ['Netherlands']",
+      "sql": "SELECT country AS \"国家\" FROM countries ORDER BY CAST(total_revenue AS REAL) DESC LIMIT 1 OFFSET 1",
+      "rows": 1,
+      "sec": 1.2,
+      "summary": "共返回 1 行数据，但没有可汇总的数值列。"
+    },
+    {
+      "q": "一共有多少个客户下过单？",
+      "ok": true,
+      "why": "期望 4,338.00，实际数值 [4338.0]",
+      "sql": "SELECT COUNT(DISTINCT customer_id) AS \"客户数\" FROM orders WHERE customer_id IS NOT NULL\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.0,
+      "summary": "结果：4,338。"
+    },
+    {
+      "q": "英国以外销售额最高的国家是哪个？",
+      "ok": true,
+      "why": "期望「Netherlands」=285,446.34，实际首行 ['Netherlands', 285446.34]",
+      "sql": "SELECT country AS \"国家\", CAST(total_revenue AS REAL) AS \"销售额\" FROM countries WHERE country != 'United Kingdom' ORDER BY \"销售额\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.4,
+      "summary": "Netherlands：285,446。"
+    },
+    {
+      "q": "销售额最少的星期几？",
+      "ok": true,
+      "why": "期望「周日」=813,827.61，实际首行 ['周日', 813827.61]",
+      "sql": "SELECT weekday AS \"星期几\", SUM(revenue) AS \"销售额\" FROM orders GROUP BY \"星期几\" ORDER BY \"销售额\" ASC LIMIT 1",
+      "rows": 1,
+      "sec": 1.6,
+      "summary": "周日：813,828。"
+    },
+    {
+      "q": "订单数最多的月份是哪个？",
+      "ok": true,
+      "why": "期望「2011-11」=2,769.00，实际首行 ['2011-11', 2769]",
+      "sql": "SELECT month AS \"月份\", COUNT(DISTINCT invoice_no) AS \"订单数\" FROM orders GROUP BY \"月份\" ORDER BY \"订单数\" DESC LIMIT 1",
+      "rows": 1,
+      "sec": 1.6,
+      "summary": "2011-11：2,769。"
+    },
+    {
+      "q": "平均每笔商品行金额是多少？",
+      "ok": true,
+      "why": "期望 20.12，实际数值 [20.121871444093987]",
+      "sql": "SELECT AVG(revenue) AS \"平均每笔商品行金额\" FROM orders\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.2,
+      "summary": "结果：20.12。"
+    },
+    {
+      "q": "2011 年 3 月的订单数是多少？",
+      "ok": true,
+      "why": "期望 1,454.00，实际数值 [1454.0]",
+      "sql": "SELECT COUNT(DISTINCT invoice_no) AS \"订单数\" FROM orders WHERE month = '2011-03'\nLIMIT 500",
+      "rows": 1,
+      "sec": 1.2,
+      "summary": "结果：1,454。"
+    }
+  ]
+}

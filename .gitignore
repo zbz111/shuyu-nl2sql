@@ -1,0 +1,39 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.testtmp/
+.ruff_cache/
+
+# 运行数据（不要提交；sales.db 是演示库，保留）
+data/app.db
+data/datasources/
+# 真实数据集 81MB，用 scripts/import_online_retail.py 重新生成
+data/real/
+*.log
+docs/*.log
+
+# 环境变量（含密钥）
+.env
+.env.*
+!.env.example
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 构建产物（app/static 是预构建前端，保留以便克隆后直接运行）
+# 如需自己构建，执行 cd frontend && npm run build
+
+
+

@@ -1,0 +1,81 @@
+INFO:     Started server process [16008]
+INFO:     Waiting for application startup.
+2026-11-07 13:42:32,263 INFO [app] 模型服务 provider=openai ok=True model=qwen-plus
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8010 (Press CTRL+C to quit)
+2026-11-07 14:16:57,325 INFO [app] GET / 200 111ms id=f0dd0fd70f12
+2026-11-07 14:16:57,426 INFO [app] GET /favicon.ico 200 1ms id=015b5ac64296
+2026-11-07 14:16:57,528 INFO [app] GET /api/v1/datasources 401 3ms id=27a8bb13ed30
+2026-11-07 14:17:47,352 INFO [app] POST /api/v1/auth/login 200 243ms id=82d9f9c964d3
+2026-11-07 14:17:47,571 INFO [app] GET /api/v1/datasources 200 8ms id=72f602183e2a
+2026-11-07 14:18:06,343 INFO [app] GET /api/v1/datasources 200 3ms id=1d3bf02c4d26
+2026-11-07 14:18:42,525 INFO [app] GET /api/v1/datasources 200 6ms id=1ff784b30d89
+2026-11-07 14:18:52,657 INFO [app] GET /api/v1/datasources 200 3ms id=c09f01c757bf
+2026-11-07 14:18:55,889 INFO [app] GET /api/v1/datasources/4/tables 200 23ms id=ab3e8971ced8
+2026-11-07 14:19:19,376 INFO [app] GET /api/v1/datasources 200 2ms id=3e1a030be33e
+2026-11-07 14:19:19,593 INFO [app] GET /api/v1/admin/system 200 11ms id=a9616897bac4
+2026-11-07 14:19:19,596 INFO [app] GET /api/v1/admin/stats 200 19ms id=65063eb8c6f2
+2026-11-07 14:19:19,597 INFO [app] GET /api/v1/admin/users 200 18ms id=e3dba1617c8a
+2026-11-07 14:19:19,598 INFO [app] GET /api/v1/admin/logs 200 17ms id=841762bbf666
+2026-11-07 14:19:20,803 INFO [app] GET /api/v1/datasources 200 4ms id=db0b5239d6b0
+2026-11-07 14:19:59,340 INFO [app] POST /api/v1/auth/login 200 250ms id=98b9ae6cbf98
+2026-11-07 14:19:59,554 INFO [app] GET /api/v1/datasources 200 3ms id=a546badf5161
+2026-11-07 14:20:18,916 INFO [app] GET /api/v1/datasources 200 4ms id=7f0570ce95ee
+2026-11-07 14:20:41,760 INFO [app] GET /api/v1/datasources/4/tables 200 15ms id=d3a46b2d0bd3
+2026-11-07 14:21:53,960 INFO [app] POST /api/v1/datasources/4/test 200 4ms id=890755b7c1e1
+2026-11-07 14:21:53,968 INFO [app] GET /api/v1/datasources 200 2ms id=34c71a327e6e
+2026-11-07 14:22:39,104 INFO [app] POST /api/v1/auth/login 200 243ms id=c8b0bfc2e236
+2026-11-07 14:22:39,314 INFO [app] GET /api/v1/datasources 200 3ms id=7d2f69d03692
+2026-11-07 14:23:05,915 INFO [app] GET /api/v1/datasources 200 3ms id=a923f76c01c6
+2026-11-07 14:23:35,967 INFO [app] GET /api/v1/datasources/4/tables 200 14ms id=35c958a36d00
+2026-11-07 14:25:27,646 INFO [app] POST /api/v1/auth/login 200 254ms id=0f2b0193398e
+2026-11-07 14:25:27,859 INFO [app] GET /api/v1/datasources 200 2ms id=b28b2af75e06
+2026-11-07 14:26:00,240 INFO [app] GET /api/v1/datasources 200 2ms id=fbb820cb99ae
+2026-11-07 14:26:46,199 INFO [app] POST /api/v1/auth/login 200 229ms id=e6a3bba99c13
+2026-11-07 14:26:46,411 INFO [app] GET /api/v1/datasources 200 6ms id=dd5ce41a71ca
+2026-11-07 14:27:00,030 INFO [app] GET /api/v1/datasources 200 3ms id=096b52f43784
+2026-11-07 14:27:02,574 INFO [app] GET /api/v1/datasources 200 3ms id=669db2861d9a
+2026-11-07 14:27:04,478 INFO [app] GET /api/v1/datasources 200 3ms id=41c5e38fbc76
+2026-11-07 14:27:07,764 INFO [app] GET /api/v1/datasources 200 3ms id=f0deff68f9c3
+2026-11-07 14:27:19,224 INFO [app] GET /api/v1/datasources 200 3ms id=a9befc4a8c59
+2026-11-07 14:27:40,511 INFO [app] GET /api/v1/datasources/4/tables 200 14ms id=19a1c24e60a8
+2026-11-07 14:28:03,772 INFO [app] GET /api/v1/datasources 200 2ms id=7158c5341be3
+2026-11-07 14:28:44,613 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:28:45,352 INFO [app] POST /api/v1/query 200 2074ms id=d1f2dd633437
+2026-11-07 14:30:37,358 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:30:37,716 INFO [app] POST /api/v1/query 200 1740ms id=945c65906419
+2026-11-07 14:30:40,387 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:30:40,760 INFO [app] POST /api/v1/query 200 1755ms id=04133622953a
+2026-11-07 14:32:48,596 INFO [app] POST /api/v1/auth/login 200 248ms id=645cd96d8413
+2026-11-07 14:32:48,818 INFO [app] GET /api/v1/datasources 200 4ms id=07ff919f4595
+2026-11-07 14:33:08,983 INFO [app] GET /api/v1/datasources 200 3ms id=0733c9993429
+2026-11-07 14:33:15,061 INFO [app] GET /api/v1/datasources/4/tables 200 14ms id=b6aa1dded2b5
+2026-11-07 14:34:58,691 INFO [app] POST /api/v1/auth/login 200 235ms id=b9f7356a4846
+2026-11-07 14:34:58,903 INFO [app] GET /api/v1/datasources 200 2ms id=00dec2b394ce
+2026-11-07 14:35:07,122 INFO [app] GET /api/v1/datasources 200 3ms id=f8e95f020813
+2026-11-07 14:35:31,363 INFO [app] POST /api/v1/datasources/4/test 200 3ms id=3d19b62a6309
+2026-11-07 14:35:31,371 INFO [app] GET /api/v1/datasources 200 2ms id=919807bee3bb
+2026-11-07 14:35:48,654 INFO [app] GET /api/v1/datasources 200 4ms id=409858460ac9
+2026-11-07 14:36:31,720 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:36:31,889 INFO [app] POST /api/v1/query 200 1411ms id=535cc80d74e5
+2026-11-07 14:38:28,255 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:38:28,266 INFO [app] POST /api/v1/query 200 2319ms id=b2d0343b4a3c
+2026-11-07 14:39:52,157 INFO [app] POST /api/v1/auth/login 200 244ms id=723b623a7697
+2026-11-07 14:39:52,374 INFO [app] GET /api/v1/datasources 200 4ms id=16d90fdb9ae6
+2026-11-07 14:39:58,863 INFO [app] GET /api/v1/datasources 200 3ms id=8032fe28b9d4
+2026-11-07 14:40:28,229 INFO [app] POST /api/v1/datasources/4/test 200 3ms id=e0e3595c4445
+2026-11-07 14:40:28,237 INFO [app] GET /api/v1/datasources 200 2ms id=75b0d71cff64
+2026-11-07 14:40:35,167 INFO [app] GET /api/v1/datasources 200 4ms id=6656296f4634
+2026-11-07 14:41:12,041 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:41:12,238 INFO [app] POST /api/v1/query 200 1859ms id=cd5305853eb1
+2026-11-07 14:43:19,421 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:43:19,634 INFO [app] POST /api/v1/query 200 2267ms id=dce377afe2ac
+2026-11-07 14:46:21,316 INFO [app] POST /api/v1/auth/login 200 249ms id=b0bda5b098ce
+2026-11-07 14:46:21,523 INFO [app] GET /api/v1/datasources 200 2ms id=4decf4e51eb9
+2026-11-07 14:46:27,937 INFO [app] GET /api/v1/datasources 200 4ms id=5d6ce6ecfa10
+2026-11-07 14:46:45,226 INFO [app] GET /api/v1/datasources/4/tables 200 13ms id=da86b6e8e05b
+2026-11-07 14:47:02,317 INFO [app] GET /api/v1/datasources 200 3ms id=cf24ca8d00c2
+2026-11-07 14:47:30,867 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:47:31,068 INFO [app] POST /api/v1/query 200 1800ms id=ee81a6b83bf7
+2026-11-07 14:48:57,810 INFO [httpx] HTTP Request: POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions "HTTP/1.1 200 OK"
+2026-11-07 14:48:57,819 INFO [app] POST /api/v1/query 200 2043ms id=1d6cdedad295
